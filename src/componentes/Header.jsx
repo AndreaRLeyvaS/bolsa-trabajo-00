@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
   return (
     <header className="border-b border-[#DCE3EA] bg-white">
@@ -5,8 +7,8 @@ export default function Header() {
 
         {/* Logo y navegación: grupo izquierdo */}
         <div className="flex flex-wrap items-center gap-8">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center gap-2 font-bold text-[#123A5F]"
           >
             <span
@@ -14,7 +16,7 @@ export default function Header() {
               className="h-6 w-6 rounded-md bg-[#123A5F]"
             />
             PrácticaLima
-          </a>
+          </Link>
 
           <nav
             aria-label="Navegación principal"
@@ -39,19 +41,19 @@ export default function Header() {
 
         {/* Botones: grupo derecho */}
         <div className="flex gap-3">
-          <button
-            type="button"
-            className="rounded-md border border-[#DCE3EA] px-4 py-2 text-sm font-semibold text-[#123A5F]"
+          <Link
+            to="/login"
+            className="rounded-md border border-[#DCE3EA] px-4 py-2 text-sm font-semibold text-[#123A5F] inline-block"
           >
             Iniciar sesión
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            className="rounded-md bg-[#123A5F] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0C2A46]"
+          <Link
+            to="/registro-empresa"
+            className="rounded-md bg-[#123A5F] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0C2A46] inline-block"
           >
             Registrarse
-          </button>
+          </Link>
         </div>
 
       </div>
