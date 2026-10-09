@@ -17,9 +17,12 @@ const MiPerfil2_1 = () => {
           <button className="px-4 py-2 border border-[#DCE3EA] text-[#162128] bg-white rounded-md text-sm font-semibold hover:bg-gray-50 transition shadow-sm">
             Ver mi perfil público
           </button>
-          <button className="px-4 py-2 bg-[#123A5F] text-white rounded-md text-sm font-semibold hover:bg-[#0C2A46] transition shadow-sm">
+          <Link
+            to="/mi-perfil/editar"
+            className="px-4 py-2 bg-[#123A5F] text-white rounded-md text-sm font-semibold hover:bg-[#0C2A46] transition shadow-sm"
+          >
             Editar datos
-          </button>
+          </Link>
         </div>
       </div>
 

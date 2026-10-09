@@ -12,6 +12,7 @@ import CambiarPassword1_6 from './Paginas/CambiarPassword1_6';
 import Error403_1_7 from './Paginas/Error403_1_7';
 import Error404_1_7 from './Paginas/Error404_1_7';
 import MiPerfil2_1 from './Paginas/miPerfil2_1';
+import MiPerfilEditar2_1 from './Paginas/miPerfilEditar2_1';
 
 export default function App() {
   return (
@@ -27,8 +28,9 @@ export default function App() {
           <Route path="/cambiar-password" element={<CambiarPassword1_6 />} />
           
           <Route path="/acceso-denegado" element={<Error403_1_7 />} />
-          <Route path="*" element={<Error404_1_7 />} />
           <Route path="/mi-perfil" element={<MiPerfil2_1 />} />
+          <Route path="/mi-perfil/editar" element={<MiPerfilEditar2_1 />} />
+          <Route path="*" element={<Error404_1_7 />} />
         </Routes>
       </main>
       <Footer />
