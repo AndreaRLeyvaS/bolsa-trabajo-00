@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Header from "../componentes/Header";
+import Footer from "../componentes/Footer";
 
 // Importación de todas las páginas del Capítulo 1
 import Landing1_1 from './Paginas/Landing1_1';

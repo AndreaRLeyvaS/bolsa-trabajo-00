@@ -1,6 +1,5 @@
-import React from "react";
-import Header from "../componentes/Header";
-import Footer from "../componentes/Footer";
+import { Link } from 'react-router-dom';
+
 
 export default function MiPerfil2_1() {
   return (
