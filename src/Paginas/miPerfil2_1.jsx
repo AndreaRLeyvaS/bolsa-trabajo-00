@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default function MiPerfil2_1() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F9FB] text-[#162128] font-sans">
-      <Header />
 
       <main className="flex-1 w-full max-w-[1200px] mx-auto px-4 py-8">
         <div className="text-xs text-[#67757F] mb-4">
@@ -143,7 +142,6 @@ export default function MiPerfil2_1() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
