@@ -31,7 +31,7 @@ const MiPerfil2_1 = () => {
             <Link to="#" className="px-4 py-2 bg-[#E6EEF5] text-[#123A5F] font-semibold rounded-md">
               Datos personales
             </Link>
-            <Link to="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            <Link to="/mi-perfil/habilidades" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Habilidades
             </Link>
             <Link to="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
