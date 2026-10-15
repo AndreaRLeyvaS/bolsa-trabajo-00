@@ -1,12 +1,6 @@
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Login1_2 = () => {
-  const navigate = useNavigate(); 
-  const handleIngresar = (e) => {
-    e.preventDefault(); 
-    navigate('/mi-perfil'); 
-  };
-
+export default function Login1_2() {
   return (
     <section className="flex min-h-[650px] items-center px-6 py-12">
       <div className="mx-auto grid w-full max-w-[1200px] items-center gap-12 lg:grid-cols-2">
@@ -40,7 +34,7 @@ const Login1_2 = () => {
             Usa tu correo institucional o el correo de tu empresa.
           </p>
 
-          <form className="mt-6" onSubmit={handleIngresar}>
+          <form className="mt-6">
             {/* Correo */}
             <div>
               <label
@@ -49,6 +43,7 @@ const Login1_2 = () => {
               >
                 CORREO
               </label>
+
               <input
                 id="correo"
                 name="correo"
@@ -98,6 +93,7 @@ const Login1_2 = () => {
                 Recordarme
               </label>
 
+              {/* CONEXIÓN 1: Recuperar contraseña */}
               <Link
                 to="/recuperar"
                 className="text-sm text-[#123A5F] hover:underline"
@@ -106,10 +102,8 @@ const Login1_2 = () => {
               </Link>
             </div>
 
-            {/* Botón Ingresar */}
-            {/* NOTA: Cambié el onClick al onSubmit del form arriba, así funciona también dando "Enter" */}
             <button
-              type="submit"
+              type="button"
               className="mt-5 h-12 w-full rounded-md bg-[#123A5F] text-sm font-semibold text-white hover:bg-[#0C2A46]"
             >
               Ingresar
@@ -123,6 +117,7 @@ const Login1_2 = () => {
             </p>
 
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              {/* CONEXIÓN 2: Registro Estudiante */}
               <Link
                 to="/registro-estudiante"
                 className="block text-center rounded-md border border-[#123A5F] px-3 py-3 text-xs font-semibold text-[#123A5F] hover:bg-[#E6EEF5]"
@@ -130,6 +125,7 @@ const Login1_2 = () => {
                 Registrarme como estudiante
               </Link>
 
+              {/* CONEXIÓN 3: Registro Empresa */}
               <Link
                 to="/registro-empresa"
                 className="block text-center rounded-md border border-[#DCE3EA] px-3 py-3 text-xs font-semibold text-[#16212B] hover:bg-[#F7F9FB]"
@@ -142,6 +138,4 @@ const Login1_2 = () => {
       </div>
     </section>
   );
-};
-
-export default Login1_2;
+}
