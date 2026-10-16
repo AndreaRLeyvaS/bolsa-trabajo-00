@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function RecuperarPassword1_5() {
+export default function RecuperarPassword() {
   // Estado para controlar en qué paso del flujo estamos (1, 2 o 3)
   const [paso, setPaso] = useState(1);
 

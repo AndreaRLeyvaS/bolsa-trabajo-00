@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Login1_2() {
+export default function Login() {
   return (
     <section className="flex min-h-[650px] items-center px-6 py-12">
       <div className="mx-auto grid w-full max-w-[1200px] items-center gap-12 lg:grid-cols-2">

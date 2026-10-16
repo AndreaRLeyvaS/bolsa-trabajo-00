@@ -3,14 +3,14 @@ import Header from './Componentes/Header';
 import Footer from './Componentes/Footer';
 
 // Importación de todas las páginas del Capítulo 1
-import Landing1_1 from './Paginas/Landing1_1';
-import Login1_2 from './Paginas/Login1_2';
-import RegistroEstudiante1_3 from './Paginas/RegistroEstudiante1_3';
-import RegistroEmpresa1_4 from './Paginas/RegistroEmpresa1_4';
-import RecuperarPassword1_5 from './Paginas/RecuperarPassword1_5';
-import CambiarPassword1_6 from './Paginas/CambiarPassword1_6';
-import Error403_1_7 from './Paginas/Error403_1_7';
-import Error404_1_7 from './Paginas/Error404_1_7';
+import Landing from './Paginas/CAP_1/1.1_Landing';
+import Login from './Paginas/CAP_1/1.2_Login';
+import RegistroEstudiante from './Paginas/CAP_1/1.3_RegistroEstudiante';
+import RegistroEmpresa from './Paginas/CAP_1/1.4_RegistroEmpresa';
+import RecuperarPassword from './Paginas/CAP_1/1.5_RecuperarPassword';
+import CambiarPassword from './Paginas/CAP_1/1.6_CambiarPassword';
+import Error403 from './Paginas/CAP_1/1.7.1_Error403';
+import Error404 from './Paginas/CAP_1/1.7.2_Error404';
 
 export default function App() {
   return (
@@ -18,15 +18,15 @@ export default function App() {
       <Header />
       <main className="min-h-screen bg-[#F7F9FB]">
         <Routes>
-          <Route path="/" element={<Landing1_1 />} />
-          <Route path="/login" element={<Login1_2 />} />
-          <Route path="/registro-estudiante" element={<RegistroEstudiante1_3 />} />
-          <Route path="/registro-empresa" element={<RegistroEmpresa1_4 />} />
-          <Route path="/recuperar" element={<RecuperarPassword1_5 />} />
-          <Route path="/cambiar-password" element={<CambiarPassword1_6 />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registro-estudiante" element={<RegistroEstudiante />} />
+          <Route path="/registro-empresa" element={<RegistroEmpresa />} />
+          <Route path="/recuperar" element={<RecuperarPassword />} />
+          <Route path="/cambiar-password" element={<CambiarPassword />} />
           
-          <Route path="/acceso-denegado" element={<Error403_1_7 />} />
-          <Route path="*" element={<Error404_1_7 />} />
+          <Route path="/acceso-denegado" element={<Error403 />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
       <Footer />

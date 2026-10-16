@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Error404_1_7() {
+export default function Error404() {
   return (
     <div className="flex flex-col items-center justify-center py-32 px-4 text-center">
       <h1 className="text-9xl font-bold text-[#123A5F] mb-4">404</h1>
