@@ -1,4 +1,4 @@
-export default function CambiarPassword1_6() {
+export default function CambiarPassword() {
   return (
     <div className="max-w-[900px] mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-[#123A5F] mb-2">Mi Perfil</h1>

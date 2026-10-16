@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function RegistroEstudiante1_3() {
+export default function RegistroEstudiante() {
   return (
     <div className="max-w-[800px] mx-auto px-4 py-16">
       <div className="text-center mb-10">
