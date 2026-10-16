@@ -38,6 +38,12 @@ import ResenasFichaEmpresa from './Paginas/CAP_6/6.2_ResenasFichaEmpresa';
 import MisResenas from './Paginas/CAP_6/6.3_MisResenas';
 import RankingEmpresas from './Paginas/CAP_6/6.4_RankingEmpresas';
 
+// Importaciones del Capítulo 7
+import InicioSesionAdmin from './Paginas/CAP_7/7.1_InicioSesionAdmin';
+import TableroMetricas from './Paginas/CAP_7/7.2_TableroMetricas';
+import GestionUsuarios from './Paginas/CAP_7/7.3_GestionUsuarios';
+import DetalleUsuario from './Paginas/CAP_7/7.4_DetalleUsuario';
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -78,6 +84,12 @@ export default function App() {
           <Route path="/empresa/resenas-ficha" element={<ResenasFichaEmpresa />} />
           <Route path="/empresa/mis-resenas" element={<MisResenas />} />
           <Route path="/empresa/ranking" element={<RankingEmpresas />} />
+
+          {/* Rutas del Capítulo 7 */}
+          <Route path="/admin/login" element={<InicioSesionAdmin />} />
+          <Route path="/admin/metricas" element={<TableroMetricas />} />
+          <Route path="/admin/usuarios" element={<GestionUsuarios />} />
+          <Route path="/admin/usuario/detalle" element={<DetalleUsuario />} />
 
           {/* Ruta por defecto para errores 404 */}
           <Route path="*" element={<Error404 />} />
