@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function NuevaConvocatoria3_4() {
-  // Estados para manejar los chips interactivos (Carreras y Habilidades)
+export default function NuevaConvocatoria() {
+  // Estados para chips interactivos de Carreras y Habilidades
   const [carreras, setCarreras] = useState(['Ingeniería de Sistemas', 'Ingeniería Industrial']);
   const [habilidades, setHabilidades] = useState(['React', 'SQL']);
+
+  // Estado para simular la Pieza Suelta 3.4 (Errores de validación)
+  const [simularErrores, setSimularErrores] = useState(false);
 
   const eliminarCarrera = (carreraAEliminar) => {
     setCarreras(carreras.filter(c => c !== carreraAEliminar));
@@ -70,7 +73,7 @@ export default function NuevaConvocatoria3_4() {
 
       </aside>
 
-      {/* 2. CONTENIDO PRINCIPAL DEL FORMULARIO */}
+      {/* 2. CONTENIDO PRINCIPAL */}
       <main className="flex-1 p-6 md:p-8 max-w-[1200px] mx-auto w-full">
         
         {/* Breadcrumb */}
@@ -78,10 +81,22 @@ export default function NuevaConvocatoria3_4() {
           Convocatorias <span className="mx-1">·</span> <span className="text-[#1A2B4C] font-medium">Nueva convocatoria</span>
         </div>
 
+        {/* CONTROLES DE DEMO (Para activar Pieza Suelta 3.4 en la presentación) */}
+        <div className="mb-4 p-2 bg-gray-100 rounded border border-gray-300 flex items-center gap-2 text-xs">
+          <label className="flex items-center gap-1.5 cursor-pointer font-medium text-[#374151]">
+            <input 
+              type="checkbox" 
+              checked={simularErrores} 
+              onChange={() => setSimularErrores(!simularErrores)} 
+            />
+            Simular Pieza Suelta 3.4 (Errores de validación)
+          </label>
+        </div>
+
         <form onSubmit={(e) => e.preventDefault()}>
           
           {/* Encabezado: Título + Botones principales */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#E5E7EB]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E7EB]">
             <h1 className="text-2xl font-bold text-[#1A2B4C]">Nueva convocatoria</h1>
             
             <div className="flex items-center gap-3">
@@ -93,12 +108,20 @@ export default function NuevaConvocatoria3_4() {
               </button>
               <button
                 type="submit"
+                onClick={() => setSimularErrores(!simularErrores)}
                 className="px-5 py-2 bg-[#1A2B4C] text-white text-xs font-bold rounded hover:bg-[#121E36] transition shadow-sm"
               >
                 Publicar convocatoria
               </button>
             </div>
           </div>
+
+          {/* BANNER DE ERROR (Aparece al simular errores) */}
+          {simularErrores && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700">
+              <p className="font-bold mb-1">Revisa 3 campos antes de publicar.</p>
+            </div>
+          )}
 
           <div className="space-y-8 bg-white border border-[#E5E7EB] rounded-lg p-6 shadow-sm">
             
@@ -115,10 +138,19 @@ export default function NuevaConvocatoria3_4() {
                   </label>
                   <input
                     type="text"
-                    defaultValue="Practicante de Desarrollo de Software"
+                    defaultValue={simularErrores ? "" : "Practicante de Desarrollo de Software"}
                     placeholder="Ej. Practicante de Desarrollo de Software"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
+                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
+                      simularErrores 
+                        ? 'border-red-500 bg-red-50 text-red-900' 
+                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    }`}
                   />
+                  {simularErrores && (
+                    <p className="text-[11px] text-red-600 mt-1 font-medium">
+                      Ingresa el título del puesto.
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -285,12 +317,22 @@ export default function NuevaConvocatoria3_4() {
                   </label>
                   <input
                     type="text"
-                    defaultValue="S/ 1,850.00"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
+                    defaultValue={simularErrores ? "S/ 850.00" : "S/ 1,850.00"}
+                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
+                      simularErrores 
+                        ? 'border-red-500 bg-red-50 text-red-900' 
+                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    }`}
                   />
-                  <p className="text-[11px] text-[#6B7280] mt-1">
-                    Entre S/ 1,025.00 y S/ 2,500.00
-                  </p>
+                  {simularErrores ? (
+                    <p className="text-[11px] text-red-600 mt-1 font-medium">
+                      Debe estar entre S/ 1,025.00 y S/ 2,500.00
+                    </p>
+                  ) : (
+                    <p className="text-[11px] text-[#6B7280] mt-1">
+                      Entre S/ 1,025.00 y S/ 2,500.00
+                    </p>
+                  )}
                 </div>
 
                 <div className="sm:col-span-2">
@@ -330,9 +372,18 @@ export default function NuevaConvocatoria3_4() {
                   </label>
                   <input
                     type="date"
-                    defaultValue="2026-09-30"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
+                    defaultValue={simularErrores ? "2026-09-01" : "2026-09-30"}
+                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
+                      simularErrores 
+                        ? 'border-red-500 bg-red-50 text-red-900' 
+                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    }`}
                   />
+                  {simularErrores && (
+                    <p className="text-[11px] text-red-600 mt-1 font-medium">
+                      El cierre debe ser posterior a la fecha de publicación.
+                    </p>
+                  )}
                 </div>
 
                 <div>
