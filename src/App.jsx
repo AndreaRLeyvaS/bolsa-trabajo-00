@@ -11,6 +11,14 @@ import RecuperarPassword from './Paginas/CAP_1/1.5_RecuperarPassword';
 import CambiarPassword from './Paginas/CAP_1/1.6_CambiarPassword';
 import Error403 from './Paginas/CAP_1/1.7.1_Error403';
 import Error404 from './Paginas/CAP_1/1.7.2_Error404';
+import MiPerfil from './Paginas/CAP_2/2.1_MiPerfil';
+import MiPerfilEditar from './Paginas/CAP_2/2.1.1_MiPerfilEditar';
+import MiPerfilHabilidades from './Paginas/CAP_2/2.2_MiPerfilHabilidades';
+import MiPerfilExperiencia from './Paginas/CAP_2/2.3_MiPerfilExperiencia';
+import MiPerfilEstadosVacios from './Paginas/CAP_2/2.2.1_MiPerfilEstadosVacios';
+import VistaPublicaPerfil from './Paginas/CAP_2/2.4_VistaPublicaPerfil';
+
+
 
 export default function App() {
   return (
@@ -24,9 +32,17 @@ export default function App() {
           <Route path="/registro-empresa" element={<RegistroEmpresa />} />
           <Route path="/recuperar" element={<RecuperarPassword />} />
           <Route path="/cambiar-password" element={<CambiarPassword />} />
+          <Route path="/mi-perfil" element={<MiPerfil />} />
+          <Route path="/mi-perfil-editar" element={<MiPerfilEditar />} />
+          <Route path="/mi-perfil-habilidades" element={<MiPerfilHabilidades />} />
+          <Route path="/mi-perfil-experiencia" element={<MiPerfilExperiencia />} />
+          <Route path="/mi-perfil-estadosvacios" element={<MiPerfilEstadosVacios />} />
+          <Route path="/mi-perfil-vistapublica" element={<VistaPublicaPerfil />} />
+
           
           <Route path="/acceso-denegado" element={<Error403 />} />
           <Route path="*" element={<Error404 />} />
+          
         </Routes>
       </main>
       <Footer />
