@@ -82,7 +82,7 @@ export default function PerfilEmpresa() {
               Ver ficha pública
             </Link>
             <Link 
-              to="/empresa/editar" 
+              to="/empresa/editar-perfil" 
               className="px-4 py-2 bg-[#1A2B4C] text-white text-xs font-bold rounded hover:bg-[#121E36] transition shadow-sm"
             >
               Editar perfil

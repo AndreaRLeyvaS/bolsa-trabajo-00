@@ -152,31 +152,8 @@ export default function CatalogoConvocatorias() {
         </div>
       </div>
 
-      {/* FRANJA SUPERIOR DE CONTEXTO */}
-      <div className="bg-white border-b border-[#E5E7EB] px-6 py-4 shadow-sm mb-6">
-        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-bold text-[#6B7280] uppercase tracking-wider">
-              HISTORIA 4 · CATÁLOGO DE CONVOCATORIAS
-            </p>
-            <h1 className="text-2xl font-bold text-[#1A2B4C] mt-1">
-              4.1 Catálogo — {cargando ? 'Cargando' : sinResultados ? 'Sin resultados' : 'con resultados'}
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-[#6B7280] hidden lg:inline max-w-xs text-right leading-tight">
-              Filtros a la izquierda con la carrera preseleccionada; resultados con contador, ordenamiento y paginación.
-            </span>
-            <span className="bg-[#D1FAE5] text-[#065F46] text-xs font-bold px-3 py-1 rounded-full border border-emerald-200 uppercase shrink-0">
-              ESTUDIANTE
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* CUERPO PRINCIPAL (GRID 12 COLUMNAS) */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+      <div className="max-w-[1200px] mx-auto p-6 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* SIDEBAR DE FILTROS (3 Cols) */}
