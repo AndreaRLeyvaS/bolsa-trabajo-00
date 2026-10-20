@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Landing() {
   return (
     <>
@@ -59,20 +61,14 @@ export default function Landing() {
               </button>
             </div>
 
-<<<<<<< HEAD
-            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#67757F] font-semibold">
-=======
-            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#30393f]">
->>>>>>> ff3499b7dc679d842a7887be691b06c881814d3f
+            <div className="mt-5 flex flex-wrap gap-6 text-xs font-semibold text-[#67757F]">
               <p>128 convocatorias vigentes</p>
               <p>46 empresas publicando</p>
               <p>10 carreras</p>
             </div>
           </div>
 
-          <div
-            className="flex h-[152px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]"
-          >
+          <div className="flex h-[152px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
             <p className="px-4 text-center text-xs text-[#67757F]">
               foto hero · estudiantes en oficina
             </p>
