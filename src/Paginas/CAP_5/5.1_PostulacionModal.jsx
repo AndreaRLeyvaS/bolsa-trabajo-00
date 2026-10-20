@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function PostulacionModal() {
   // Estado para alternar entre las 4 piezas del punto 5.1
-  const [piezaActiva, setPiezaActiva] = useState('modal_confirmar'); // 'modal_confirmar' | 'perfil_incompleto' | 'sin_guardadas' | 'sin_postulaciones'
+  const [piezaActiva, setPiezaActiva] = useState('sin_guardadas'); // 'modal_confirmar' | 'perfil_incompleto' | 'sin_guardadas' | 'sin_postulaciones'
   
   // Estado para el mensaje al reclutador y contador de caracteres
   const [mensaje, setMensaje] = useState(

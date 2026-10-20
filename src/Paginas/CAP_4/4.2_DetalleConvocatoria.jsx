@@ -178,9 +178,9 @@ export default function DetalleConvocatoria() {
             {/* Botones al final del contenido */}
             {estadoSidebar === 'estudiante' && (
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-[#E5E7EB]">
-                <button className="w-full sm:w-auto px-8 py-3 bg-[#1A2B4C] text-white text-sm font-bold rounded-md hover:bg-[#121E36] transition shadow-sm">
+                <Link to="/postulaciones/modal" className="w-full sm:w-auto px-8 py-3 bg-[#1A2B4C] text-white text-sm font-bold rounded-md hover:bg-[#121E36] transition shadow-sm">
                   Postular ahora
-                </button>
+                </Link>
                 <button 
                   onClick={() => setGuardada(!guardada)}
                   className="w-full sm:w-auto px-6 py-3 border border-[#1A2B4C] text-[#1A2B4C] text-sm font-bold rounded-md hover:bg-gray-50 transition"

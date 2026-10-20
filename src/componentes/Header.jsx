@@ -30,14 +30,14 @@ export default function Header() {
             </Link>
 
             <Link
-              to="#convocatorias"
+              to="postulaciones"
               className="hover:text-[#123A5F]"
             >
               Mis postulaciones
             </Link>
 
             <Link
-              to="/guardadas"
+              to="guardadas"
               className="hover:text-[#123A5F]"
             >
               Guardadas
@@ -50,7 +50,7 @@ export default function Header() {
               Empresas
             </Link>
 
-            <Link to="#como-funciona" className="hover:text-[#123A5F]">
+            <Link to="#faltante" className="hover:text-[#123A5F]">
               Mi perfil
             </Link>
           </nav>
