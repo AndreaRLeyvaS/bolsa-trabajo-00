@@ -135,7 +135,7 @@ export default function PostulacionModal() {
               </button>
               <Link 
                 to="/postulaciones/confirmacion"
-                className="px-6 py-2.5 bg-[#1A2B4C] text-white text-xs font-bold rounded-md hover:bg-[#121E36] transition shadow-sm inline-block"
+                className="px-6 py-2.5 bg-[#0F8B7E] text-white text-xs font-bold rounded-md hover:bg-[#0F8B7E] transition shadow-sm inline-block"
               >
                 Enviar postulación
               </Link>
