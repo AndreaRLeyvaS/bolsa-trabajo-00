@@ -135,7 +135,7 @@ export default function PostulacionModal() {
               </button>
               <Link 
                 to="/postulaciones/confirmacion"
-                className="px-6 py-2.5 bg-[#1A2B4C] text-white text-xs font-bold rounded-md hover:bg-[#121E36] transition shadow-sm inline-block"
+                className="px-6 py-2.5 bg-[#0F8B7E] text-white text-[15px] font-semibold rounded-[6px] hover:bg-[#0C6F65] transition shadow-[0_1px_2px_rgba(18,58,95,0.06)] inline-block"
               >
                 Enviar postulación
               </Link>
@@ -180,7 +180,7 @@ export default function PostulacionModal() {
       {piezaActiva === 'sin_guardadas' && (
         <div className="bg-white border border-[#E5E7EB] rounded-lg p-12 text-center max-w-[520px] mx-auto my-8 shadow-sm">
           <div className="w-24 h-24 bg-[#EEF2F7] rounded-full flex items-center justify-center mx-auto mb-5 text-4xl text-[#1A2B4C]">
-            ★
+            ☆
           </div>
           <h2 className="text-xl font-bold text-[#1A2B4C] mb-2">
             No has guardado convocatorias
