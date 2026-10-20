@@ -1,6 +1,53 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  // Estados del formulario (Formulario controlado)
+  const [correo, setCorreo] = useState('');
+  const [contrasena, setContrasena] = useState('');
+  const [mostrarPassword, setMostrarPassword] = useState(false);
+
+  // Estados para las piezas sueltas de la pantalla 1.2
+  const [cargando, setCargando] = useState(false);
+  const [errorCredenciales, setErrorCredenciales] = useState(false);
+  const [errorCamposVacios, setErrorCamposVacios] = useState(false);
+  const [intentosRestantes, setIntentosRestantes] = useState(5);
+
+  // Manejador del envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Limpiar estados de error previos
+    setErrorCredenciales(false);
+    setErrorCamposVacios(false);
+
+    // 1. Pieza suelta: Campo vacío
+    if (!correo.trim() || !contrasena.trim()) {
+      setErrorCamposVacios(true);
+      return;
+    }
+
+    // 2. Pieza suelta: Botón en carga
+    setCargando(true);
+
+    setTimeout(() => {
+      setCargando(false);
+
+      // Simulación de autenticación y redirección según rol
+      if (correo.endsWith('@aloe.ulima.edu.pe') && contrasena === '123456') {
+        navigate('/estudiante/catalogo');
+      } else if (correo.endsWith('@andesperu.com.pe') && contrasena === '123456') {
+        navigate('/empresa/convocatorias');
+      } else {
+        // 3. Pieza suelta: Error de credenciales
+        setErrorCredenciales(true);
+        setIntentosRestantes((prev) => (prev > 0 ? prev - 1 : 0));
+      }
+    }, 1500);
+  };
+
   return (
     <section className="flex min-h-[650px] items-center px-6 py-12">
       <div className="mx-auto grid w-full max-w-[1200px] items-center gap-12 lg:grid-cols-2">
@@ -34,7 +81,21 @@ export default function Login() {
             Usa tu correo institucional o el correo de tu empresa.
           </p>
 
-          <form className="mt-6">
+          {/* PIEZA SUELTA: MENSAJE DE ERROR DE CREDENCIALES */}
+          {errorCredenciales && (
+            <div className="mt-4 rounded-md border border-[#B4322B] bg-[#B4322B]/10 p-3 text-xs text-[#B4322B]">
+              Correo o contraseña incorrectos. Te quedan {intentosRestantes} intentos antes del bloqueo temporal.
+            </div>
+          )}
+
+          {/* PIEZA SUELTA: MENSAJE DE CAMPOS VACÍOS */}
+          {errorCamposVacios && (
+            <div className="mt-4 rounded-md border border-[#B7791F] bg-[#B7791F]/10 p-3 text-xs text-[#B7791F]">
+              Completa 2 campos para continuar.
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="mt-6">
             {/* Correo */}
             <div>
               <label
@@ -48,10 +109,20 @@ export default function Login() {
                 id="correo"
                 name="correo"
                 type="email"
+                disabled={cargando}
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
                 autoComplete="username"
                 placeholder="mariana.quispe@aloe.ulima.edu.pe"
-                className="h-12 w-full rounded-md border border-[#DCE3EA] px-3 text-sm text-[#16212B] outline-none focus:border-[#123A5F]"
+                className={`h-12 w-full rounded-md border px-3 text-sm text-[#16212B] outline-none transition-colors ${
+                  errorCamposVacios && !correo
+                    ? 'border-[#B4322B] focus:border-[#B4322B]'
+                    : 'border-[#DCE3EA] focus:border-[#123A5F]'
+                } ${cargando ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
               />
+              {errorCamposVacios && !correo && (
+                <span className="mt-1 block text-xs text-[#B4322B]">Ingresa tu correo.</span>
+              )}
             </div>
 
             {/* Contraseña */}
@@ -63,23 +134,39 @@ export default function Login() {
                 CONTRASEÑA
               </label>
 
-              <div className="flex items-center rounded-md border border-[#DCE3EA] focus-within:border-[#123A5F]">
+              <div
+                className={`flex items-center rounded-md border transition-colors ${
+                  errorCamposVacios && !contrasena
+                    ? 'border-[#B4322B] focus-within:border-[#B4322B]'
+                    : 'border-[#DCE3EA] focus-within:border-[#123A5F]'
+                }`}
+              >
                 <input
                   id="contrasena"
                   name="contrasena"
-                  type="password"
+                  type={mostrarPassword ? 'text' : 'password'}
+                  disabled={cargando}
+                  value={contrasena}
+                  onChange={(e) => setContrasena(e.target.value)}
                   autoComplete="current-password"
                   placeholder="••••••••••"
-                  className="h-12 min-w-0 flex-1 rounded-md px-3 text-sm text-[#16212B] outline-none"
+                  className={`h-12 min-w-0 flex-1 rounded-md px-3 text-sm text-[#16212B] outline-none ${
+                    cargando ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'
+                  }`}
                 />
 
                 <button
                   type="button"
-                  className="px-3 text-xs font-medium text-[#123A5F]"
+                  disabled={cargando}
+                  onClick={() => setMostrarPassword(!mostrarPassword)}
+                  className="px-3 text-xs font-medium text-[#123A5F] hover:underline"
                 >
-                  Mostrar
+                  {mostrarPassword ? 'Ocultar' : 'Mostrar'}
                 </button>
               </div>
+              {errorCamposVacios && !contrasena && (
+                <span className="mt-1 block text-xs text-[#B4322B]">Ingresa tu contraseña.</span>
+              )}
             </div>
 
             {/* Recordarme y recuperación */}
@@ -88,6 +175,7 @@ export default function Login() {
                 <input
                   name="recordarme"
                   type="checkbox"
+                  disabled={cargando}
                   className="h-4 w-4 accent-[#123A5F]"
                 />
                 Recordarme
@@ -102,11 +190,23 @@ export default function Login() {
               </Link>
             </div>
 
+            {/* BOTÓN CON ESTADO DE CARGA */}
             <button
-              type="button"
-              className="mt-5 h-12 w-full rounded-md bg-[#123A5F] text-sm font-semibold text-white hover:bg-[#0C2A46]"
+              type="submit"
+              disabled={cargando}
+              className="mt-5 flex h-12 w-full items-center justify-center rounded-md bg-[#123A5F] text-sm font-semibold text-white transition-colors hover:bg-[#0C2A46] disabled:opacity-75 disabled:cursor-not-allowed"
             >
-              Ingresar
+              {cargando ? (
+                <div className="flex items-center gap-2">
+                  <svg className="h-4 w-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                  </svg>
+                  <span>Ingresando...</span>
+                </div>
+              ) : (
+                'Ingresar'
+              )}
             </button>
           </form>
 
@@ -120,7 +220,7 @@ export default function Login() {
               {/* CONEXIÓN 2: Registro Estudiante */}
               <Link
                 to="/registro-estudiante"
-                className="block text-center rounded-md border border-[#123A5F] px-3 py-3 text-xs font-semibold text-[#123A5F] hover:bg-[#E6EEF5]"
+                className="block rounded-md border border-[#123A5F] px-3 py-3 text-center text-xs font-semibold text-[#123A5F] hover:bg-[#E6EEF5]"
               >
                 Registrarme como estudiante
               </Link>
@@ -128,7 +228,7 @@ export default function Login() {
               {/* CONEXIÓN 3: Registro Empresa */}
               <Link
                 to="/registro-empresa"
-                className="block text-center rounded-md border border-[#DCE3EA] px-3 py-3 text-xs font-semibold text-[#16212B] hover:bg-[#F7F9FB]"
+                className="block rounded-md border border-[#DCE3EA] px-3 py-3 text-center text-xs font-semibold text-[#16212B] hover:bg-[#F7F9FB]"
               >
                 Registrar mi empresa
               </Link>
