@@ -5,7 +5,7 @@ export default function Landing() {
       <section className="bg-[#E6EEF5] px-6 py-6">
         <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <h1 className="text-[28px] font-semibold leading-8 text-[#123A5F]">
+            <h1 className="text-[28px] font-bold leading-8 text-[#123A5F]">
               Tu primera práctica empieza aquí
             </h1>
 
@@ -59,7 +59,7 @@ export default function Landing() {
               </button>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#67757F]">
+            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#67757F] font-semibold">
               <p>128 convocatorias vigentes</p>
               <p>46 empresas publicando</p>
               <p>10 carreras</p>

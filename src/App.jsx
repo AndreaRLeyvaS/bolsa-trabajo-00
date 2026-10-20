@@ -12,6 +12,14 @@ import CambiarPassword from './Paginas/CAP_1/1.6_CambiarPassword';
 import Error403 from './Paginas/CAP_1/1.7.1_Error403';
 import Error404 from './Paginas/CAP_1/1.7.2_Error404';
 
+// Importaciones del Capítulo 2 (Perfil del Estudiante)
+import MiPerfil from './Paginas/CAP_2/2.1_MiPerfil';
+import MiPerfilEditar from './Paginas/CAP_2/2.1.1_MiPerfilEditar';
+import MiPerfilHabilidades from './Paginas/CAP_2/2.2_MiPerfilHabilidades';
+import MiPerfilEstadosVacios from './Paginas/CAP_2/2.2.1_MiPerfilEstadosVacios';
+import MiPerfilExperiencia from './Paginas/CAP_2/2.3_MiPerfilExperiencia';
+import VistaPublicaPerfil from './Paginas/CAP_2/2.4_VistaPublicaPerfil';
+
 // Importaciones del Capítulo 3
 import PerfilEmpresa from './Paginas/CAP_3/3.1_PerfilEmpresa';
 import EditarPerfilEmpresa from './Paginas/CAP_3/3.1.2_EditarPerfilEmpresa';
@@ -58,6 +66,14 @@ export default function App() {
           <Route path="/recuperar" element={<RecuperarPassword />} />
           <Route path="/cambiar-password" element={<CambiarPassword />} />
           <Route path="/acceso-denegado" element={<Error403 />} />
+
+          {/* Rutas del Capítulo 2 - Perfil del Estudiante */}
+  <Route path="/estudiante/perfil" element={<MiPerfil />} />
+  <Route path="/estudiante/perfil/editar" element={<MiPerfilEditar />} />
+  <Route path="/estudiante/perfil/habilidades" element={<MiPerfilHabilidades />} />
+  <Route path="/estudiante/perfil/estados-vacios" element={<MiPerfilEstadosVacios />} />
+  <Route path="/estudiante/perfil/experiencia" element={<MiPerfilExperiencia />} />
+  <Route path="/estudiante/perfil-publico" element={<VistaPublicaPerfil />} />
 
           {/* Rutas del Capítulo 3 */}
           <Route path="/empresa/perfil" element={<PerfilEmpresa />} />
