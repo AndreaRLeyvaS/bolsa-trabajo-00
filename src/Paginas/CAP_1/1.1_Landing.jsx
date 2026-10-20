@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function Landing() {
   return (
     <>
@@ -29,7 +27,7 @@ export default function Landing() {
                 <input
                   id="puesto"
                   type="text"
-                  placeholder="Ej. Practicante de Data Analytics"
+                  placeholder="Ej. «Practicante de Data Analytics»"
                   className="h-12 w-full rounded-md border border-[#DCE3EA] bg-white px-3 text-sm text-[#16212B]"
                 />
               </div>
