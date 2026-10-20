@@ -22,20 +22,37 @@ export default function Header() {
             aria-label="Navegación principal"
             className="flex flex-wrap items-center gap-6 text-sm text-[#67757F]"
           >
-            <a
-              href="#convocatorias"
-              className="font-semibold text-[#123A5F] hover:underline"
+            <Link
+              to="/convocatorias"
+              className="hover:text-[#123A5F]"
             >
               Convocatorias
-            </a>
+            </Link>
 
-            <a href="#empresas" className="hover:text-[#123A5F]">
+            <Link
+              to="postulaciones"
+              className="hover:text-[#123A5F]"
+            >
+              Mis postulaciones
+            </Link>
+
+            <Link
+              to="guardadas"
+              className="hover:text-[#123A5F]"
+            >
+              Guardadas
+            </Link>
+
+            <Link 
+              to="empresa/ficha-publica" 
+              className="hover:text-[#123A5F]"
+            >
               Empresas
-            </a>
+            </Link>
 
-            <a href="#como-funciona" className="hover:text-[#123A5F]">
-              Cómo funciona
-            </a>
+            <Link to="#faltante" className="hover:text-[#123A5F]">
+              Mi perfil
+            </Link>
           </nav>
         </div>
 

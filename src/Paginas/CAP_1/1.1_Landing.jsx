@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 export default function Landing() {
   return (
@@ -7,7 +7,7 @@ export default function Landing() {
       <section className="bg-[#E6EEF5] px-6 py-6">
         <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <h1 className="text-[28px] font-semibold leading-8 text-[#123A5F]">
+            <h1 className="text-[28px] font-bold leading-8 text-[#123A5F]">
               Tu primera práctica empieza aquí
             </h1>
 
@@ -29,7 +29,7 @@ export default function Landing() {
                 <input
                   id="puesto"
                   type="text"
-                  placeholder="Ej. Practicante de Data Analytics"
+                  placeholder="Ej. «Practicante de Data Analytics»"
                   className="h-12 w-full rounded-md border border-[#DCE3EA] bg-white px-3 text-sm text-[#16212B]"
                 />
               </div>
@@ -61,16 +61,14 @@ export default function Landing() {
               </button>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#67757F]">
+            <div className="mt-5 flex flex-wrap gap-6 text-xs font-semibold text-[#67757F]">
               <p>128 convocatorias vigentes</p>
               <p>46 empresas publicando</p>
               <p>10 carreras</p>
             </div>
           </div>
 
-          <div
-            className="flex h-[152px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]"
-          >
+          <div className="flex h-[152px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
             <p className="px-4 text-center text-xs text-[#67757F]">
               foto hero · estudiantes en oficina
             </p>
