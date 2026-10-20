@@ -59,7 +59,11 @@ export default function Landing() {
               </button>
             </div>
 
+<<<<<<< HEAD
             <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#67757F] font-semibold">
+=======
+            <div className="mt-5 flex flex-wrap gap-6 text-xs text-[#30393f]">
+>>>>>>> ff3499b7dc679d842a7887be691b06c881814d3f
               <p>128 convocatorias vigentes</p>
               <p>46 empresas publicando</p>
               <p>10 carreras</p>
