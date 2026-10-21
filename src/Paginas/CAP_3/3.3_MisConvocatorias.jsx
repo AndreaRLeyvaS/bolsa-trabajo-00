@@ -123,86 +123,57 @@ export default function MisConvocatorias() {
     <div className="flex min-h-[650px] bg-[#F7F9FB] text-[#16212B]">
 
       {/* Menú lateral */}
-      <aside className="hidden w-[280px] shrink-0 border-r border-[#DCE3EA] bg-white px-5 py-7 md:block">
-        <div className="mb-7">
-          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
+      {/* 1. SIDEBAR LATERAL (240px) */}
+      <aside className="w-60 bg-white border-r border-[#E5E7EB] py-6 shrink-0 hidden md:block">
+        
+        {/* Bloque CONVOCATORIAS */}
+        <div className="mb-6">
+          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
             CONVOCATORIAS
-          </h2>
-
-          <nav className="space-y-1">
-            <Link
-              to="/empresa/convocatorias"
-              className="flex items-center gap-3 rounded bg-[#E6EEF5] px-3 py-2 text-sm font-semibold text-[#123A5F]"
-            >
-              <span>▪</span>
-              Mis convocatorias
+          </h3>
+          <nav className="space-y-0.5">
+            <Link to="/empresa/convocatorias" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Mis convocatorias
             </Link>
-
-            <Link
-              to="/empresa/nueva-convocatoria"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Nueva convocatoria
+            <Link to="/empresa/nueva-convocatoria" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Nueva convocatoria
             </Link>
-
-            <Link
-              to="/empresa/bandeja"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Bandeja de postulantes
+            <Link to="/empresa/bandeja" className="flex items-center gap-3 px-6 py-2.5 text-xs font-bold text-[#1A2B4C] bg-[#EEF2F7] border-l-4 border-[#1A2B4C]">
+              <span>■</span> Bandeja de postulantes
             </Link>
           </nav>
         </div>
 
-        <div className="mb-7">
-          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
+        {/* Bloque EMPRESA */}
+        <div className="mb-6">
+          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
             EMPRESA
-          </h2>
-
-          <nav className="space-y-1">
-            <Link
-              to="/empresa/perfil"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Perfil de la empresa
+          </h3>
+          <nav className="space-y-0.5">
+            <Link to="/empresa/perfil" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Perfil de la empresa
             </Link>
-
-            <Link
-              to="/empresa/resenas-ficha"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Reseñas recibidas
+            <Link to="#" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Reseñas recibidas
             </Link>
           </nav>
         </div>
 
+        {/* Bloque CUENTA */}
         <div>
-          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
+          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
             CUENTA
-          </h2>
-
-          <nav className="space-y-1">
-            <Link
-              to="/cambiar-password"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Cambiar contraseña
+          </h3>
+          <nav className="space-y-0.5">
+            <Link to="/cambiar-password" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Cambiar contraseña
             </Link>
-
-            <Link
-              to="/login"
-              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
-            >
-              <span className="text-[#BDCEDD]">▪</span>
-              Cerrar sesión
+            <Link to="/login" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Cerrar sesión
             </Link>
           </nav>
         </div>
+
       </aside>
 
       {/* Contenido */}
