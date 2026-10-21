@@ -198,9 +198,7 @@ export default function EditarPerfilEmpresa() {
               </h2>
 
               <div className="flex flex-col sm:flex-row gap-6 items-start">
-                <div className="w-36 h-36 border border-dashed border-[#D1D5DB] rounded-lg flex items-center justify-center bg-[repeating-linear-gradient(45deg,#F3F4F6,#F3F4F6_10px,#E5E7EB_10px,#E5E7EB_20px)] shrink-0">
-                  <span className="text-xs text-[#9CA3AF] font-medium">logo</span>
-                </div>
+                <img src="https://www.andesoutdoors.com.pe/wp-content/uploads/favicon_andes.png" alt="Logotipo de Andes Outdoors" className="h-36 w-36 shrink-0 rounded-lg border border-dashed border-[#D1D5DB] bg-white object-contain p-3" />
 
                 <div className="space-y-3">
                   <p className="text-xs text-[#6B7280]">
