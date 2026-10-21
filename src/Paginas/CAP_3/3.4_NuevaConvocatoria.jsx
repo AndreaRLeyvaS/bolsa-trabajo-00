@@ -2,427 +2,548 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NuevaConvocatoria() {
-  // Estados para chips interactivos de Carreras y Habilidades
-  const [carreras, setCarreras] = useState(['Ingeniería de Sistemas', 'Ingeniería Industrial']);
-  const [habilidades, setHabilidades] = useState(['React', 'SQL']);
+  const [carreras, setCarreras] = useState([
+    'Ingeniería de Sistemas',
+    'Ingeniería Industrial'
+  ]);
 
-  // Estado para simular la Pieza Suelta 3.4 (Errores de validación)
+  const [habilidades, setHabilidades] = useState(['React', 'SQL']);
   const [simularErrores, setSimularErrores] = useState(false);
 
-  const eliminarCarrera = (carreraAEliminar) => {
-    setCarreras(carreras.filter(c => c !== carreraAEliminar));
-  };
+  const campo =
+    'h-12 w-full rounded-md border border-[#DCE3EA] bg-white px-3 text-sm text-[#16212B] outline-none focus:border-[#123A5F]';
 
-  const eliminarHabilidad = (habilidadAEliminar) => {
-    setHabilidades(habilidades.filter(h => h !== habilidadAEliminar));
-  };
+  const etiqueta =
+    'mb-2 block text-xs font-semibold tracking-wider text-[#16212B]';
+
+  const tarjeta =
+    'rounded-md border border-[#DCE3EA] bg-white p-5';
+
+  const tituloSeccion =
+    'mb-4 text-xs font-semibold tracking-widest text-[#123A5F]';
+
+  function eliminarCarrera(carrera) {
+    setCarreras(carreras.filter((item) => item !== carrera));
+  }
+
+  function eliminarHabilidad(habilidad) {
+    setHabilidades(habilidades.filter((item) => item !== habilidad));
+  }
+
+  function publicar(evento) {
+    evento.preventDefault();
+    setSimularErrores(true);
+  }
 
   return (
-    <div className="flex min-h-[calc(100vh-112px)] bg-[#F5F7FA] font-sans">
-      
-      {/* 1. SIDEBAR LATERAL (240px) */}
-      <aside className="w-60 bg-white border-r border-[#E5E7EB] py-6 shrink-0 hidden md:block">
-        
-        {/* Bloque CONVOCATORIAS (Nueva convocatoria Activo) */}
-        <div className="mb-6">
-          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
+    <div className="flex min-h-[650px] bg-[#F7F9FB] text-[#16212B]">
+
+      {/* Menú lateral */}
+      <aside className="hidden w-[280px] shrink-0 border-r border-[#DCE3EA] bg-white px-5 py-7 md:block">
+
+        <div className="mb-7">
+          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
             CONVOCATORIAS
-          </h3>
-          <nav className="space-y-0.5">
-            <Link to="/empresa/convocatorias" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Mis convocatorias
+          </h2>
+
+          <nav className="space-y-1">
+            <Link
+              to="/empresa/convocatorias"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Mis convocatorias
             </Link>
-            <Link to="/empresa/nueva-convocatoria" className="flex items-center gap-3 px-6 py-2.5 text-xs font-bold text-[#1A2B4C] bg-[#EEF2F7] border-l-4 border-[#1A2B4C]">
-              <span>■</span> Nueva convocatoria
+
+            <Link
+              to="/empresa/nueva-convocatoria"
+              className="flex items-center gap-3 rounded bg-[#E6EEF5] px-3 py-2 text-sm font-semibold text-[#123A5F]"
+            >
+              <span>▪</span>
+              Nueva convocatoria
             </Link>
-            <Link to="#" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Bandeja de postulantes
+
+            <Link
+              to="/empresa/bandeja"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Bandeja de postulantes
             </Link>
           </nav>
         </div>
 
-        {/* Bloque EMPRESA */}
-        <div className="mb-6">
-          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
+        <div className="mb-7">
+          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
             EMPRESA
-          </h3>
-          <nav className="space-y-0.5">
-            <Link to="/empresa/perfil" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Perfil de la empresa
+          </h2>
+
+          <nav className="space-y-1">
+            <Link
+              to="/empresa/perfil"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Perfil de la empresa
             </Link>
-            <Link to="#" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Reseñas recibidas
+
+            <Link
+              to="/empresa/resenas-ficha"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Reseñas recibidas
             </Link>
           </nav>
         </div>
 
-        {/* Bloque CUENTA */}
         <div>
-          <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
+          <h2 className="mb-3 px-3 text-xs font-semibold tracking-widest text-[#67757F]">
             CUENTA
-          </h3>
-          <nav className="space-y-0.5">
-            <Link to="/cambiar-password" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Cambiar contraseña
+          </h2>
+
+          <nav className="space-y-1">
+            <Link
+              to="/cambiar-password"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Cambiar contraseña
             </Link>
-            <Link to="/login" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
-              <span className="text-gray-400">■</span> Cerrar sesión
+
+            <Link
+              to="/login"
+              className="flex items-center gap-3 rounded px-3 py-2 text-sm hover:bg-[#E6EEF5]"
+            >
+              <span className="text-[#BDCEDD]">▪</span>
+              Cerrar sesión
             </Link>
           </nav>
         </div>
-
       </aside>
 
-      {/* 2. CONTENIDO PRINCIPAL */}
-      <main className="flex-1 p-6 md:p-8 max-w-[1200px] mx-auto w-full">
-        
-        {/* Breadcrumb */}
-        <div className="text-xs text-[#6B7280] mb-3">
-          Convocatorias <span className="mx-1">·</span> <span className="text-[#1A2B4C] font-medium">Nueva convocatoria</span>
+      {/* Formulario */}
+      <form
+        onSubmit={publicar}
+        noValidate
+        className="min-w-0 flex-1 p-5 lg:p-8"
+      >
+
+        {/* Título y acciones */}
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="mb-1 text-xs text-[#67757F]">
+              Convocatorias ·
+              <span className="ml-1 font-semibold text-[#16212B]">
+                Nueva convocatoria
+              </span>
+            </p>
+
+            <h1 className="text-[28px] font-semibold leading-8 text-[#16212B]">
+              Nueva convocatoria
+            </h1>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              className="rounded-md border border-[#DCE3EA] bg-white px-5 py-3 text-sm font-semibold text-[#16212B] hover:bg-[#E6EEF5]"
+            >
+              Guardar como borrador
+            </button>
+
+            <button
+              type="submit"
+              className="rounded-md bg-[#0F8B7E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0C756A]"
+            >
+              Publicar convocatoria
+            </button>
+          </div>
         </div>
 
-        {/* CONTROLES DE DEMO (Para activar Pieza Suelta 3.4 en la presentación) */}
-        <div className="mb-4 p-2 bg-gray-100 rounded border border-gray-300 flex items-center gap-2 text-xs">
-          <label className="flex items-center gap-1.5 cursor-pointer font-medium text-[#374151]">
-            <input 
-              type="checkbox" 
-              checked={simularErrores} 
-              onChange={() => setSimularErrores(!simularErrores)} 
+        {/* Control de simulación conservado */}
+        <div className="mb-4 rounded border border-[#DCE3EA] bg-[#E6EEF5] p-3">
+          <label className="flex cursor-pointer items-center gap-2 text-xs text-[#123A5F]">
+            <input
+              type="checkbox"
+              checked={simularErrores}
+              onChange={() => setSimularErrores(!simularErrores)}
+              className="accent-[#123A5F]"
             />
+
             Simular Pieza Suelta 3.4 (Errores de validación)
           </label>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()}>
-          
-          {/* Encabezado: Título + Botones principales */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E7EB]">
-            <h1 className="text-2xl font-bold text-[#1A2B4C]">Nueva convocatoria</h1>
-            
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                className="px-4 py-2 border border-[#E5E7EB] bg-white text-[#374151] text-xs font-semibold rounded hover:bg-gray-50 transition"
-              >
-                Guardar como borrador
-              </button>
-              <button
-                type="submit"
-                onClick={() => setSimularErrores(!simularErrores)}
-                className="px-5 py-2 bg-[#1A2B4C] text-white text-xs font-bold rounded hover:bg-[#121E36] transition shadow-sm"
-              >
-                Publicar convocatoria
-              </button>
-            </div>
-          </div>
+        {simularErrores && (
+          <p
+            role="alert"
+            className="mb-4 rounded-md border border-red-200 bg-red-50 p-3 text-sm font-semibold text-[#B4322B]"
+          >
+            Revisa 3 campos antes de publicar.
+          </p>
+        )}
 
-          {/* BANNER DE ERROR (Aparece al simular errores) */}
-          {simularErrores && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700">
-              <p className="font-bold mb-1">Revisa 3 campos antes de publicar.</p>
-            </div>
-          )}
+        {/* Dos columnas */}
+        <div className="grid items-stretch gap-4 xl:grid-cols-2">
 
-          <div className="space-y-8 bg-white border border-[#E5E7EB] rounded-lg p-6 shadow-sm">
-            
-            {/* SECCIÓN 1: PUESTO */}
-            <div>
-              <h2 className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-4 pb-2 border-b border-[#F3F4F6]">
-                1 - PUESTO
+          {/* Columna izquierda */}
+          <div className="flex flex-col gap-4">
+
+            {/* 1. Puesto */}
+            <section className={tarjeta}>
+              <h2 className={tituloSeccion}>
+                1 · PUESTO
               </h2>
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="puesto" className={etiqueta}>
                     TÍTULO DEL PUESTO
                   </label>
+
                   <input
+                    key={`puesto-${simularErrores}`}
+                    id="puesto"
+                    name="puesto"
                     type="text"
-                    defaultValue={simularErrores ? "" : "Practicante de Desarrollo de Software"}
-                    placeholder="Ej. Practicante de Desarrollo de Software"
-                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
-                      simularErrores 
-                        ? 'border-red-500 bg-red-50 text-red-900' 
-                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    defaultValue={
+                      simularErrores
+                        ? ''
+                        : 'Practicante de Desarrollo de Software'
+                    }
+                    className={`${campo} ${
+                      simularErrores ? 'border-red-500' : ''
                     }`}
                   />
+
                   {simularErrores && (
-                    <p className="text-[11px] text-red-600 mt-1 font-medium">
+                    <p className="mt-1 text-xs text-[#B4322B]">
                       Ingresa el título del puesto.
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="descripcion" className={etiqueta}>
                     DESCRIPCIÓN DE LA PRÁCTICA
                   </label>
+
                   <textarea
-                    rows={3}
+                    id="descripcion"
+                    name="descripcion"
                     defaultValue="Apoyarás al equipo de producto en el desarrollo de módulos web internos con React y en la atención de requerimientos de los usuarios."
-                    placeholder="Describe el objetivo del puesto..."
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#374151] focus:outline-none focus:border-[#1A2B4C]"
+                    className="h-[118px] w-full rounded-md border border-[#DCE3EA] bg-white p-3 text-sm leading-[22px] text-[#16212B] outline-none focus:border-[#123A5F]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="funciones" className={etiqueta}>
                     FUNCIONES PRINCIPALES
                   </label>
+
                   <textarea
-                    rows={3}
-                    defaultValue="• Desarrollo de componentes en React.&#10;• Pruebas y corrección de incidencias."
-                    placeholder="Lista las funciones principales..."
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#374151] focus:outline-none focus:border-[#1A2B4C]"
+                    id="funciones"
+                    name="funciones"
+                    defaultValue={
+                      '• Desarrollo de componentes en React.\n• Pruebas y corrección de incidencias.'
+                    }
+                    className="h-[104px] w-full rounded-md border border-[#DCE3EA] bg-white p-3 text-sm leading-[22px] text-[#16212B] outline-none focus:border-[#123A5F]"
                   />
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* SECCIÓN 2: PERFIL BUSCADO */}
-            <div>
-              <h2 className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-4 pb-2 border-b border-[#F3F4F6]">
-                2 - PERFIL BUSCADO
+            {/* 2. Perfil buscado */}
+            <section className={`${tarjeta} flex-1 xl:min-h-[330px]`}>
+              <h2 className={tituloSeccion}>
+                2 · PERFIL BUSCADO
               </h2>
 
-              <div className="space-y-4">
-                {/* Chips de Carreras */}
-                <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-2">
-                    CARRERAS
-                  </label>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {carreras.map((carrera, index) => (
-                      <span
-                        key={index}
-                        className="inline-flex items-center gap-1.5 bg-[#F5F7FA] border border-[#E5E7EB] text-[#1A2B4C] text-xs font-medium px-3 py-1.5 rounded-full"
-                      >
-                        {carrera}
-                        <button
-                          type="button"
-                          onClick={() => eliminarCarrera(carrera)}
-                          className="text-[#6B7280] hover:text-red-600 font-bold ml-1"
-                        >
-                          ✕
-                        </button>
-                      </span>
-                    ))}
-                    <button
-                      type="button"
-                      className="inline-flex items-center gap-1 border border-dashed border-[#1A2B4C] text-[#1A2B4C] text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-gray-50 transition"
-                    >
-                      + agregar
-                    </button>
-                  </div>
-                </div>
+              <div>
+                <p className={etiqueta}>
+                  CARRERAS
+                </p>
 
-                {/* Ciclo Mínimo */}
-                <div className="max-w-xs">
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                <div className="flex min-h-16 flex-wrap items-center gap-2 rounded-md border border-[#DCE3EA] bg-white p-3">
+                  {carreras.map((carrera) => (
+                    <span
+                      key={carrera}
+                      className="inline-flex items-center gap-1 rounded bg-[#E6EEF5] px-2 py-1 text-xs text-[#123A5F]"
+                    >
+                      {carrera}
+
+                      <button
+                        type="button"
+                        onClick={() => eliminarCarrera(carrera)}
+                        aria-label={`Quitar ${carrera}`}
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+
+                  <button
+                    type="button"
+                    className="text-xs text-[#67757F]"
+                  >
+                    + agregar
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="ciclo" className={etiqueta}>
                     CICLO MÍNIMO
                   </label>
+
                   <select
+                    id="ciclo"
+                    name="ciclo"
                     defaultValue="Séptimo"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C] bg-white"
+                    className={campo}
                   >
-                    <option value="Quinto">Quinto</option>
-                    <option value="Sexto">Sexto</option>
-                    <option value="Séptimo">Séptimo</option>
-                    <option value="Octavo">Octavo</option>
-                    <option value="Noveno">Noveno</option>
-                    <option value="Décimo">Décimo</option>
+                    <option>Quinto</option>
+                    <option>Sexto</option>
+                    <option>Séptimo</option>
+                    <option>Octavo</option>
+                    <option>Noveno</option>
+                    <option>Décimo</option>
                   </select>
                 </div>
 
-                {/* Chips de Habilidades Deseadas */}
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-2">
+                  <p className={etiqueta}>
                     HABILIDADES DESEADAS
-                  </label>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {habilidades.map((habilidad, index) => (
+                  </p>
+
+                  <div className="flex min-h-12 flex-wrap items-center gap-2 rounded-md border border-[#DCE3EA] bg-white px-3 py-2">
+                    {habilidades.map((habilidad) => (
                       <span
-                        key={index}
-                        className="inline-flex items-center gap-1.5 bg-[#F5F7FA] border border-[#E5E7EB] text-[#1A2B4C] text-xs font-medium px-3 py-1.5 rounded-full"
+                        key={habilidad}
+                        className="inline-flex items-center gap-1 rounded bg-[#E6EEF5] px-2 py-1 text-xs text-[#123A5F]"
                       >
                         {habilidad}
+
                         <button
                           type="button"
                           onClick={() => eliminarHabilidad(habilidad)}
-                          className="text-[#6B7280] hover:text-red-600 font-bold ml-1"
+                          aria-label={`Quitar ${habilidad}`}
                         >
-                          ✕
+                          ×
                         </button>
                       </span>
                     ))}
-                    <button
-                      type="button"
-                      className="inline-flex items-center gap-1 border border-dashed border-[#1A2B4C] text-[#1A2B4C] text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-gray-50 transition"
-                    >
-                      + agregar
-                    </button>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
+          </div>
 
-            {/* SECCIÓN 3: CONDICIONES */}
-            <div>
-              <h2 className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-4 pb-2 border-b border-[#F3F4F6]">
-                3 - CONDICIONES
+          {/* Columna derecha */}
+          <div className="flex flex-col gap-4">
+
+            {/* 3. Condiciones */}
+            <section className={tarjeta}>
+              <h2 className={tituloSeccion}>
+                3 · CONDICIONES
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="modalidad" className={etiqueta}>
                     MODALIDAD
                   </label>
+
                   <select
+                    id="modalidad"
+                    name="modalidad"
                     defaultValue="Híbrido"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C] bg-white"
+                    className={campo}
                   >
-                    <option value="Presencial">Presencial</option>
-                    <option value="Híbrido">Híbrido</option>
-                    <option value="Remoto">Remoto</option>
+                    <option>Híbrido</option>
+                    <option>Presencial</option>
+                    <option>Remoto</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
-                    DISTRITO
-                  </label>
-                  <input
-                    type="text"
-                    defaultValue="San Isidro"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="jornada" className={etiqueta}>
                     JORNADA
                   </label>
+
                   <select
+                    id="jornada"
+                    name="jornada"
                     defaultValue="Medio tiempo"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C] bg-white"
+                    className={campo}
                   >
-                    <option value="Medio tiempo">Medio tiempo</option>
-                    <option value="Tiempo completo">Tiempo completo</option>
+                    <option>Medio tiempo</option>
+                    <option>Tiempo completo</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="distrito" className={etiqueta}>
+                    DISTRITO
+                  </label>
+
+                  <select
+                    id="distrito"
+                    name="distrito"
+                    defaultValue="San Isidro"
+                    className={campo}
+                  >
+                    <option>San Isidro</option>
+                    <option>Miraflores</option>
+                    <option>San Borja</option>
+                    <option>Santiago de Surco</option>
+                    <option>La Molina</option>
+                    <option>Lima</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="subvencion" className={etiqueta}>
                     SUBVENCIÓN MENSUAL
                   </label>
+
                   <input
+                    key={`subvencion-${simularErrores}`}
+                    id="subvencion"
+                    name="subvencion"
                     type="text"
-                    defaultValue={simularErrores ? "S/ 850.00" : "S/ 1,850.00"}
-                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
-                      simularErrores 
-                        ? 'border-red-500 bg-red-50 text-red-900' 
-                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    defaultValue={
+                      simularErrores ? 'S/ 850.00' : 'S/ 1,850.00'
+                    }
+                    className={`${campo} ${
+                      simularErrores ? 'border-red-500' : ''
                     }`}
                   />
-                  {simularErrores ? (
-                    <p className="text-[11px] text-red-600 mt-1 font-medium">
-                      Debe estar entre S/ 1,025.00 y S/ 2,500.00
-                    </p>
-                  ) : (
-                    <p className="text-[11px] text-[#6B7280] mt-1">
-                      Entre S/ 1,025.00 y S/ 2,500.00
-                    </p>
-                  )}
+
+                  <p
+                    className={`mt-2 text-xs ${
+                      simularErrores
+                        ? 'text-[#B4322B]'
+                        : 'text-[#67757F]'
+                    }`}
+                  >
+                    {simularErrores
+                      ? 'Debe estar entre S/ 1,025.00 y S/ 2,500.00'
+                      : 'Entre S/ 1,025.00 y S/ 2,500.00'}
+                  </p>
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="beneficios" className={etiqueta}>
                     BENEFICIOS
                   </label>
-                  <input
-                    type="text"
+
+                  <textarea
+                    id="beneficios"
+                    name="beneficios"
                     defaultValue="Movilidad, seguro EPS y horario flexible en época de exámenes."
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#374151] focus:outline-none focus:border-[#1A2B4C]"
+                    className="h-[92px] w-full rounded-md border border-[#DCE3EA] bg-white p-3 text-sm leading-[22px] text-[#16212B] outline-none focus:border-[#123A5F]"
                   />
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* SECCIÓN 4: PUBLICACIÓN */}
-            <div>
-              <h2 className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-4 pb-2 border-b border-[#F3F4F6]">
-                4 - PUBLICACIÓN
+            {/* 4. Publicación */}
+            <section className={tarjeta}>
+              <h2 className={tituloSeccion}>
+                4 · PUBLICACIÓN
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="publicacion" className={etiqueta}>
                     FECHA DE PUBLICACIÓN
                   </label>
+
                   <input
+                    id="publicacion"
+                    name="publicacion"
                     type="date"
                     defaultValue="2026-09-07"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
+                    className={campo}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                  <label htmlFor="cierre" className={etiqueta}>
                     FECHA DE CIERRE
                   </label>
+
                   <input
+                    key={`cierre-${simularErrores}`}
+                    id="cierre"
+                    name="cierre"
                     type="date"
-                    defaultValue={simularErrores ? "2026-09-01" : "2026-09-30"}
-                    className={`w-full p-2.5 border rounded text-xs text-[#1A2B4C] focus:outline-none ${
-                      simularErrores 
-                        ? 'border-red-500 bg-red-50 text-red-900' 
-                        : 'border-[#E5E7EB] focus:border-[#1A2B4C]'
+                    defaultValue={
+                      simularErrores ? '2026-09-01' : '2026-09-30'
+                    }
+                    className={`${campo} ${
+                      simularErrores ? 'border-red-500' : ''
                     }`}
                   />
+
                   {simularErrores && (
-                    <p className="text-[11px] text-red-600 mt-1 font-medium">
+                    <p className="mt-1 text-xs text-[#B4322B]">
                       El cierre debe ser posterior a la fecha de publicación.
                     </p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-[#374151] uppercase mb-1">
+                <div className="max-w-[210px]">
+                  <label htmlFor="vacantes" className={etiqueta}>
                     VACANTES
                   </label>
+
                   <input
+                    id="vacantes"
+                    name="vacantes"
                     type="number"
-                    defaultValue="2"
-                    min="1"
-                    className="w-full p-2.5 border border-[#E5E7EB] rounded text-xs text-[#1A2B4C] focus:outline-none focus:border-[#1A2B4C]"
+                    defaultValue={2}
+                    min={1}
+                    className={campo}
                   />
                 </div>
               </div>
 
-              {/* Checkbox de Notificación */}
-              <div className="flex items-center gap-2 mt-4 pt-2">
+              <label
+                htmlFor="avisarCorreo"
+                className="mt-4 flex items-start gap-2 text-sm text-[#16212B]"
+              >
                 <input
-                  type="checkbox"
                   id="avisarCorreo"
+                  name="avisarCorreo"
+                  type="checkbox"
                   defaultChecked
-                  className="w-4 h-4 text-[#1A2B4C] rounded border-[#E5E7EB] focus:ring-[#1A2B4C]"
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#123A5F]"
                 />
-                <label htmlFor="avisarCorreo" className="text-xs text-[#374151] font-medium cursor-pointer">
-                  Avisarme por correo cada vez que llegue una postulación
-                </label>
-              </div>
 
-              {/* Texto explicativo inferior */}
-              <p className="text-xs text-[#6B7280] mt-4 pt-3 border-t border-[#F3F4F6] leading-relaxed">
-                Al publicar, la convocatoria queda visible para todos los estudiantes cuya carrera coincida. Puedes editarla o cerrarla en cualquier momento desde «Mis convocatorias».
+                Avisarme por correo cada vez que llegue una postulación
+              </label>
+            </section>
+
+            {/* Aviso informativo */}
+            <div className="flex flex-1 items-start gap-3 rounded-md bg-[#E6EEF5] p-5 xl:min-h-[150px]">
+              <span className="text-sm font-bold text-[#123A5F]">
+                i
+              </span>
+
+              <p className="text-sm leading-[22px] text-[#123A5F]">
+                Al publicar, la convocatoria queda visible para todos
+                los estudiantes cuya carrera coincida. Puedes editarla
+                o cerrarla en cualquier momento desde «Mis convocatorias».
               </p>
             </div>
-
           </div>
 
-        </form>
-
-      </main>
+        </div>
+      </form>
     </div>
   );
 }
