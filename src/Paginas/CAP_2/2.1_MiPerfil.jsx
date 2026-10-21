@@ -5,15 +5,20 @@ export default function MiPerfil() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F9FB] text-[#162128] font-sans">
 
+      //contenedor
       <main className="flex-1 w-full max-w-[1200px] mx-auto px-4 py-8">
         <div className="text-xs text-[#67757F] mb-4">
           <span>Inicio</span> <span className="mx-1">/</span> <span className="text-[#123A5F] font-medium">Mi perfil</span>
         </div>
+        
+        //encabezado
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 border-b border-[#DCE3EA] gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold text-[#123A5F]">Mi perfil profesional</h1>
             <div className="flex items-center gap-3 mt-2">
               <span className="text-sm font-medium text-[#162128]">Perfil completo al 78%</span>
+              
+              //barra 78%
               <div className="w-36 h-2 bg-[#E6EEF5] rounded-full overflow-hidden">
                 <div className="w-[78%] h-full bg-[#0F8B7E] rounded-full"></div>
               </div>
@@ -36,13 +41,13 @@ export default function MiPerfil() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <aside className="md:col-span-1">
             <nav className="bg-white border border-[#DCE3EA] rounded-md p-2 space-y-1">
-              <Link to="/estudiante/perfil" className="block px-3 py-2 text-sm font-semibold text-[#123A5F] bg-[#E6EEF5] rounded">
+              <Link to="/estudiante/mi-perfil" className="block px-3 py-2 text-sm font-semibold text-[#123A5F] bg-[#E6EEF5] rounded">
                 Datos personales
               </Link>
-              <Link to="/estudiante/perfil/habilidades" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
+              <Link to="/mi-perfil-habilidades" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
                 Habilidades
               </Link>
-              <Link to="/estudiante/perfil/experiencia" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
+              <Link to="/mi-perfil-experiencia" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
                 Experiencia
               </Link>
               <Link to="/cambiar-password" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
