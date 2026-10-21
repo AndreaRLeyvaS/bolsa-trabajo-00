@@ -37,9 +37,9 @@ export default function Login() {
 
       // Simulación de autenticación y redirección según rol
       if (correo.endsWith('@aloe.ulima.edu.pe') && contrasena === '123456') {
-        navigate('/estudiante/catalogo');
+        navigate('/estudiante/perfil');
       } else if (correo.endsWith('@andesperu.com.pe') && contrasena === '123456') {
-        navigate('/empresa/convocatorias');
+        navigate('/empresa/perfil');
       } else {
         // 3. Pieza suelta: Error de credenciales
         setErrorCredenciales(true);

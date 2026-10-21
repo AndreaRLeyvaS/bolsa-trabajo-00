@@ -17,16 +17,16 @@ export default function MiPerfilHabilidades() {
         {/* Menú lateral */}
         <div className="w-full md:w-56 shrink-0">
           <nav className="flex flex-col space-y-1 bg-white border border-[#DCE3EA] rounded-md p-2">
-            <Link to="/mi-perfil" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            <Link to="/estudiante/perfil" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Datos personales
             </Link>
-            <Link to="/mi-perfil/habilidades" className="px-4 py-2 bg-[#E6EEF5] text-[#123A5F] font-semibold rounded-md">
+            <Link to="/estudiante/perfil/habilidades" className="px-4 py-2 bg-[#E6EEF5] text-[#123A5F] font-semibold rounded-md">
               Habilidades
             </Link>
-            <Link to="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            <Link to="/estudiante/perfil/experiencia" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Experiencia
             </Link>
-            <Link to="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            <Link to="/cambiar-password" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Contraseña
             </Link>
           </nav>
