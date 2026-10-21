@@ -33,19 +33,19 @@ export default function MiPerfilExperiencia() {
         <aside className="md:col-span-1">
           <nav className="bg-white border border-[#DCE3EA] rounded-md p-2 space-y-1">
             <Link
-              to="/mi-perfil"
+              to="/estudiante/perfil"
               className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded"
             >
               Datos personales
             </Link>
             <Link
-              to="/habilidades"
+              to="/estudiante/perfil/habilidades"
               className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded"
             >
               Habilidades
             </Link>
             <Link
-              to="/experiencia"
+              to="/estudiante/perfil/experiencia"
               className="block px-3 py-2 text-sm font-semibold text-[#123A5F] bg-[#E6EEF5] rounded"
             >
               Experiencia

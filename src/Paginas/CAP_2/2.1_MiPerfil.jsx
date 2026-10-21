@@ -36,18 +36,18 @@ export default function MiPerfil() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <aside className="md:col-span-1">
             <nav className="bg-white border border-[#DCE3EA] rounded-md p-2 space-y-1">
-              <a href="/mi-perfil" className="block px-3 py-2 text-sm font-semibold text-[#123A5F] bg-[#E6EEF5] rounded">
+              <Link to="/estudiante/perfil" className="block px-3 py-2 text-sm font-semibold text-[#123A5F] bg-[#E6EEF5] rounded">
                 Datos personales
-              </a>
-              <a href="/habilidades" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
+              </Link>
+              <Link to="/estudiante/perfil/habilidades" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
                 Habilidades
-              </a>
-              <a href="/experiencia" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
+              </Link>
+              <Link to="/estudiante/perfil/experiencia" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
                 Experiencia
-              </a>
-              <a href="/cambiar-password" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
+              </Link>
+              <Link to="/cambiar-password" className="block px-3 py-2 text-sm font-medium text-[#67757F] hover:bg-gray-50 rounded">
                 Contraseña
-              </a>
+              </Link>
             </nav>
           </aside>
 
