@@ -130,9 +130,7 @@ export default function MiPerfilPublico2_4() {
           <section className="bg-white border border-[#DCE3EA] rounded-md p-6 mb-6 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-[#E6EEF5] border border-[#DCE3EA] flex items-center justify-center text-[#123A5F] font-bold text-xl">
-                  MQ
-                </div>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=320&q=85" alt="Mariana Quispe" className="h-16 w-16 rounded-full border border-[#DCE3EA] object-cover" />
                 <div>
                   <h1 className="text-xl font-bold text-[#123A5F]">Mariana Lucía Quispe Ramírez</h1>
                   <p className="text-sm text-[#162128] mt-0.5">

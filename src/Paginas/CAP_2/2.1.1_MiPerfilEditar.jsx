@@ -72,9 +72,7 @@ export default function MiPerfilEditar() {
           <div className="flex-1 bg-white p-6 rounded-md border border-[#DCE3EA]">
             {/* Foto de perfil */}
             <div className="flex flex-col sm:flex-row gap-5 pb-6 mb-6 border-b border-[#DCE3EA]">
-              <div className="w-[88px] h-[88px] flex-shrink-0 flex items-center justify-center border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#F7F9FB_0px,#F7F9FB_8px,#E6EEF5_8px,#E6EEF5_16px)]">
-                <span className="text-xs text-[#67757F]">foto</span>
-              </div>
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=85" alt="Mariana Quispe" className="h-[88px] w-[88px] shrink-0 rounded-full border border-[#DCE3EA] object-cover" />
               <div>
                 <p className="text-sm font-semibold text-[#162128]">Fotografía de perfil</p>
                 <p className="text-xs text-[#67757F] mt-1">JPG o PNG, mínimo 400 × 400 px, hasta 2 MB.</p>

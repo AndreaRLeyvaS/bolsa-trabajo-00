@@ -250,9 +250,7 @@ export default function Header() {
 
           {/* Perfil de Usuario */}
           <Link to="/estudiante/perfil" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-[#E6EEF5] text-[#123A5F] font-bold text-xs rounded-full flex items-center justify-center shrink-0">
-              MQ
-            </div>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85" alt="Mariana Quispe" className="h-8 w-8 shrink-0 rounded-full object-cover" />
             <span className="text-sm font-bold text-[#16212B] hidden md:flex items-center gap-1">
               Mariana Quispe
               {/* Flecha hacia abajo */}

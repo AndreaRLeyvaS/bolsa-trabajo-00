@@ -126,9 +126,7 @@ export default function DetalleUsuario() {
 
           {/* HERO DEL USUARIO */}
           <div className="bg-white border border-[#E5E7EB] rounded-lg p-6 mb-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div className="w-20 h-20 bg-[#EEF2F7] rounded-lg text-[#1A2B4C] font-bold text-2xl flex items-center justify-center shrink-0 border border-[#E5E7EB]">
-              MQ
-            </div>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=85" alt="Mariana Quispe" className="h-20 w-20 shrink-0 rounded-lg border border-[#E5E7EB] object-cover" />
 
             <div className="flex-1 space-y-1">
               <div className="flex flex-wrap items-center gap-3">
