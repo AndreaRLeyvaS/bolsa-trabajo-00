@@ -68,12 +68,12 @@ export default function App() {
           <Route path="/acceso-denegado" element={<Error403 />} />
 
           {/* Rutas del Capítulo 2 - Perfil del Estudiante */}
-  <Route path="/estudiante/perfil" element={<MiPerfil />} />
-  <Route path="/estudiante/perfil/editar" element={<MiPerfilEditar />} />
-  <Route path="/estudiante/perfil/habilidades" element={<MiPerfilHabilidades />} />
-  <Route path="/estudiante/perfil/estados-vacios" element={<MiPerfilEstadosVacios />} />
-  <Route path="/estudiante/perfil/experiencia" element={<MiPerfilExperiencia />} />
-  <Route path="/estudiante/perfil-publico" element={<VistaPublicaPerfil />} />
+          <Route path="/estudiante/perfil" element={<MiPerfil />} />
+          <Route path="/estudiante/perfil/editar" element={<MiPerfilEditar />} />
+          <Route path="/estudiante/perfil/habilidades" element={<MiPerfilHabilidades />} />
+          <Route path="/estudiante/perfil/estados-vacios" element={<MiPerfilEstadosVacios />} />
+          <Route path="/estudiante/perfil/experiencia" element={<MiPerfilExperiencia />} />
+          <Route path="/estudiante/perfil-publico" element={<VistaPublicaPerfil />} />
 
           {/* Rutas del Capítulo 3 */}
           <Route path="/empresa/perfil" element={<PerfilEmpresa />} />

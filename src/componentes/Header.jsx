@@ -50,7 +50,7 @@ export default function Header() {
               Empresas
             </Link>
 
-            <Link to="#faltante" className="hover:text-[#123A5F]">
+            <Link to="estudiante/perfil" className="hover:text-[#123A5F]">
               Mi perfil
             </Link>
           </nav>

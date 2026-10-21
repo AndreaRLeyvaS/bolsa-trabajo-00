@@ -25,18 +25,18 @@ export default function MiPerfilEstadosVacios() {
         {/* Menú Lateral (izquierdo) - CASCARÓN VISUAL SIN REACT ROUTER */}
         <div className="w-full md:w-56 flex-shrink-0">
           <nav className="flex flex-col space-y-1 bg-white border border-[#DCE3EA] rounded-md p-2">
-            <a href="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            <Link to="/estudiante/perfil" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Datos personales
-            </a>
-            <a href="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            </Link>
+            <Link to="/estudiante/perfil/habilidades" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Habilidades
-            </a>
-            <a href="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            </Link>
+            <Link to="/estudiante/perfil/experiencia" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Experiencia
-            </a>
-            <a href="#" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
+            </Link>
+            <Link to="/cambiar-password" className="px-4 py-2 text-[#67757F] font-medium hover:bg-gray-50 rounded-md transition-colors">
               Contraseña
-            </a>
+            </Link>
           </nav>
         </div>
 
