@@ -32,7 +32,7 @@ export default function Footer() {
 
   if (esRutaEmpresa) {
     return (
-      <footer className="bg-white border-t border-[#DCE3EA] py-3 px-6 text-xs text-[#67757F] font-sans">
+      <footer className="bg-white border-t border-[#0C2A46] py-3 px-6 text-xs text-[#67757F] font-sans">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <span className="font-semibold text-[#123A5F]">PrácticaLima Panel de empresa</span>
           <span>Soporte: empresas@ulima.edu.pe (01) 437 6767</span>
