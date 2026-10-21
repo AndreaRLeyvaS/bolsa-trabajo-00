@@ -79,7 +79,6 @@ export default function BandejaPostulantes() {
             </Link>
           </nav>
         </div>
-
         {/* Bloque EMPRESA */}
         <div className="mb-6">
           <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
@@ -94,7 +93,7 @@ export default function BandejaPostulantes() {
             </Link>
           </nav>
         </div>
-
+        
         {/* Bloque CUENTA */}
         <div>
           <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
@@ -109,7 +108,6 @@ export default function BandejaPostulantes() {
             </Link>
           </nav>
         </div>
-
       </aside>
 
       {/* 2. CONTENIDO PRINCIPAL */}

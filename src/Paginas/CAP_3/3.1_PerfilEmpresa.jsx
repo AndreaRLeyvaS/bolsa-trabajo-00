@@ -20,12 +20,11 @@ export default function PerfilEmpresa() {
             <Link to="/empresa/nueva-convocatoria" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
               <span className="text-gray-400">■</span> Nueva convocatoria
             </Link>
-            <Link to="/empresa/bandeja" className="flex items-center gap-3 px-6 py-2.5 text-xs font-bold text-[#1A2B4C] bg-[#EEF2F7] border-l-4 border-[#1A2B4C]">
-              <span>■</span> Bandeja de postulantes
+            <Link to="/empresa/bandeja" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
+              <span className="text-gray-400">■</span> Bandeja de postulantes
             </Link>
           </nav>
         </div>
-
         {/* Bloque EMPRESA */}
         <div className="mb-6">
           <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
@@ -33,14 +32,14 @@ export default function PerfilEmpresa() {
           </h3>
           <nav className="space-y-0.5">
             <Link to="/empresa/perfil" className="flex items-center gap-3 px-6 py-2.5 text-xs font-bold text-[#1A2B4C] bg-[#EEF2F7] border-l-4 border-[#1A2B4C]">
-              <span className="text-gray-400">■</span> Perfil de la empresa
+              <span>■</span> Perfil de la empresa
             </Link>
             <Link to="#" className="flex items-center gap-3 px-6 py-2.5 text-xs text-[#374151] hover:bg-[#F9FAFB] transition">
               <span className="text-gray-400">■</span> Reseñas recibidas
             </Link>
           </nav>
         </div>
-
+        
         {/* Bloque CUENTA */}
         <div>
           <h3 className="px-6 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2">
@@ -55,7 +54,6 @@ export default function PerfilEmpresa() {
             </Link>
           </nav>
         </div>
-
       </aside>
 
       {/* Contenido del perfil */}
