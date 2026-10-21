@@ -211,9 +211,17 @@ export default function GestionUsuarios() {
                       {/* Usuario con Avatar */}
                       <td className="py-3.5 px-4 font-bold text-[#1A2B4C]">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 bg-[#EEF2F7] rounded-full text-[#1A2B4C] font-bold text-[11px] flex items-center justify-center shrink-0">
-                            {u.nombre.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                          </div>
+                          {u.nombre === 'Mariana Quispe Ramírez' ? (
+                            <img
+                              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85"
+                              alt="Mariana Quispe"
+                              className="h-8 w-8 shrink-0 rounded-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-8 h-8 bg-[#EEF2F7] rounded-full text-[#1A2B4C] font-bold text-[11px] flex items-center justify-center shrink-0">
+                              {u.nombre.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                            </div>
+                          )}
                           <Link to="/admin/usuario/detalle" className="hover:underline">
                             {u.nombre}
                           </Link>

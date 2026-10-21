@@ -55,11 +55,11 @@ export default function FichaPublicaEmpresa() {
         {/* Presentación de la empresa */}
         <section className="flex flex-wrap items-center gap-6 rounded-md border border-[#DCE3EA] bg-white p-6">
 
-          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-md border border-[#BDCEDD] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
-            <span className="text-xs text-[#67757F]">
-              logotipo
-            </span>
-          </div>
+          <img
+            src="https://www.andesoutdoors.com.pe/wp-content/uploads/favicon_andes.png"
+            alt="Logotipo de Andes Outdoors"
+            className="h-24 w-24 shrink-0 rounded-md border border-[#BDCEDD] bg-white object-contain p-2"
+          />
 
           <div className="min-w-0 flex-1">
             <h1 className="text-[28px] font-semibold leading-8 text-[#123A5F]">

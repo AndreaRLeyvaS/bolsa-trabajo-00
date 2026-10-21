@@ -55,9 +55,11 @@ export default function MiPerfil() {
             <section className="bg-white border border-[#DCE3EA] rounded-md p-6 shadow-sm">
               {/* Foto de perfil */}
               <div className="flex items-center gap-4 pb-6 border-b border-[#DCE3EA]">
-                <div className="w-20 h-20 rounded-full bg-[#E6EEF5] border border-[#DCE3EA] flex items-center justify-center text-[#123A5F] font-bold text-xl">
-                  MQ
-                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=85"
+                  alt="Mariana Quispe"
+                  className="h-20 w-20 rounded-full border border-[#DCE3EA] object-cover"
+                />
                 <div>
                   <button type="button" className="text-sm font-semibold text-[#123A5F] hover:underline">
                     Cambiar foto

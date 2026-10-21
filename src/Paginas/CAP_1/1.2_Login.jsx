@@ -64,10 +64,12 @@ export default function Login() {
             y tu perfil profesional donde los dejaste.
           </p>
 
-          <div className="mt-5 flex h-[220px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
-            <p className="px-4 text-center text-xs text-[#67757F]">
-              ilustración · campus Monterrico
-            </p>
+          <div className="mt-5 h-[220px] overflow-hidden rounded-md border border-[#DCE3EA]">
+            <img
+              src="https://www.sasaki.com/wp-content/uploads/2023/06/76389_03U_N199_website-1800x1200.jpg"
+              alt="Campus universitario"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
 

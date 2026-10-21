@@ -97,7 +97,11 @@ export default function PostulacionModal() {
               </div>
 
               <div className="border border-[#E5E7EB] rounded-lg p-4 flex items-center gap-4">
-                <div className="w-14 h-14 bg-[repeating-linear-gradient(45deg,#F3F4F6,#F3F4F6_8px,#E5E7EB_8px,#E5E7EB_16px)] rounded-lg border border-[#E5E7EB] shrink-0" />
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=280&q=85"
+                  alt="Mariana Quispe"
+                  className="h-14 w-14 shrink-0 rounded-lg border border-[#E5E7EB] object-cover"
+                />
                 <div>
                   <p className="text-sm font-bold text-[#1A2B4C]">Mariana Lucía Quispe Ramírez</p>
                   <p className="text-xs text-[#6B7280] mt-0.5">

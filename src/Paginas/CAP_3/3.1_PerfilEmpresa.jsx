@@ -94,11 +94,11 @@ export default function PerfilEmpresa() {
 
         {/* Identificación de la empresa */}
         <section className="mb-5 flex flex-wrap items-center gap-6 rounded-md border border-[#DCE3EA] bg-white px-6 py-5">
-          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-md border border-[#BDCEDD] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
-            <span className="text-xs text-[#67757F]">
-              logotipo
-            </span>
-          </div>
+          <img
+            src="https://www.andesoutdoors.com.pe/wp-content/uploads/favicon_andes.png"
+            alt="Logotipo de Andes Outdoors"
+            className="h-24 w-24 shrink-0 rounded-md border border-[#BDCEDD] object-contain bg-white p-2"
+          />
 
           <div>
             <h2 className="text-2xl font-semibold text-[#123A5F]">

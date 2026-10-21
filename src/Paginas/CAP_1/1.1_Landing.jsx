@@ -68,10 +68,12 @@ export default function Landing() {
             </div>
           </div>
 
-          <div className="flex h-[152px] items-center justify-center rounded-md border border-[#DCE3EA] bg-[repeating-linear-gradient(135deg,#E6EEF5_0px,#E6EEF5_8px,#DCE3EA_8px,#DCE3EA_16px)]">
-            <p className="px-4 text-center text-xs text-[#67757F]">
-              foto hero · estudiantes en oficina
-            </p>
+          <div className="h-[152px] overflow-hidden rounded-md border border-[#DCE3EA]">
+            <img
+              src="https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-03/enel-colombia-practicas-1.jpg"
+              alt="Estudiantes colaborando en una oficina"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </section>
